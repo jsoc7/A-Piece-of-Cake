@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Cake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #5C4033;
+            margin-top: 20px;
+        }
+
+        .cake-container {
+            margin: 30px auto;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 200px;
+            height: 200px;
+        }
+
+        #cake {
+            stroke: #5C4033;
+            stroke-width: 2;
+            fill: white;
+            transition: fill 0.3s ease;
+        }
+
+        #cream {
+            stroke: #5C4033;
+            stroke-width: 2;
+            fill: none;
+            transition: fill 0.3s ease;
+        }
+
+        #candle-flame-gif {
+            position: absolute;
+            top: 45px; /* Adjust to align with the candle */
+            left: 120px; /* Adjust to align with the candle */
+            width: 30px; /* Adjust size */
+            height: 30px;
+        display: none; /* Hidden by default */
+        animation: none; /* Ensure no CSS animation overrides the GIF behavior */
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: transform 0.2s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .instructions {
+            font-size: 16px;
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .flavor-name {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #5C4033;
+        }
+
+        .top-header {
+            background-color: #FFFFFF;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+        .top-header h1 {
+            font-size: 2em;
+            color: #5C4033;
+            font-family: 'Great Vibes', cursive;
+        }
+        .location {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            color: #5C4033;
+        }
+        .location img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        header {
+            background-color: #FFE4E1;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #5C4033;
+            margin-left: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+        #banner-img {
+            width: 200px;
+            height: auto;
+        }
+
+        nav {
+            background-color: #FFDAB9;
+            padding: px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li button {
+            background: none;
+            border: none;
+            color: #5C4033;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        footer {
+    background-color: #FFDAB9;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative; /* Change from fixed to relative */
+}
+
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <h1>Life's 🍰 Bakery</h1>
+        <div class="location">
+            <img src="images/pinklocation.png" alt="Location Icon">
+            <span>Your State Of Mind</span>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><button onclick="location.href='home.html'">Home</button></li>
+            <li><button onclick="location.href='create.html'">Create</button></li>
+            <li><button onclick="location.href='gallery.html'">Gallery</button></li>
+            <li><button onclick="location.href='contact.html'">Contact</button></li>
+        </ul>
+
+    <header>
+        <h1>A Piece Of Cake</h1>
+        <img id="banner-img" src="images/pinkcake.png" alt="Cake Slice">
+    </header>
+
+
+    </nav>
+
+    <h1>Customize Your Cake</h1>
+    <p class="instructions">Choose a base flavor by selecting a color below:</p>
+
+    <div class="cake-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <path id="cake" d="M50,100 h100 a10,10 0 0 1 10,10 v40 a10,10 0 0 1 -10,10 h-100 a10,10 0 0 1 -10,-10 v-40 a10,10 0 0 1 10,-10 z" />
+            <path id="cream" d="M50,90 h100 a10,10 0 0 1 10,10 v10 a10,10 0 0 1 -10,10 h-100 a10,10 0 0 1 -10,-10 v-10 a10,10 0 0 1 10,-10 z" />
+            <rect id="candle" x="95" y="50" width="10" height="30" fill="white" style="display: none; stroke: #5C4033; stroke-width: 1;" />
+
+            <image id="topping-left" x="55" y="70" width="30" height="30" style="display: none;" />
+            <image id="topping-left-center" x="75" y="70" width="30" height="30" style="display: none;" />
+            <image id="topping-right-center" x="105" y="70" width="30" height="30" style="display: none;" />
+            <image id="topping-right" x="125" y="70" width="30" height="30" style="display: none;" />
+        </svg>
+     
+    <!-- Add GIF placeholder -->
+    <img id="candle-flame-gif" src="images/candle.gif" alt="Flame GIF" style="display: none;" />
+
+    </div>
+
+    <div class="color-options">
+        <div class="color-option" style="background-color: pink;" onclick="changeBase('pink', 'Strawberry')"></div>
+        <div class="color-option" style="background-color: chocolate;" onclick="changeBase('chocolate', 'Chocolate')"></div>
+        <div class="color-option" style="background-color: yellow;" onclick="changeBase('yellow', 'Vanilla')"></div>
+        <div class="color-option" style="background-color: lightblue;" onclick="changeBase('lightblue', 'Blueberry')"></div>
+    </div>
+
+    <p id="flavor" class="flavor-name">Base Flavor: None</p>
+
+    <div id="cream-section" style="display: none;">
+        <p class="instructions">Now choose a cream flavor for your cake:</p>
+        <div class="color-options">
+            <div class="color-option" style="background-color: lightpink;" onclick="changeCream('lightpink', 'Rose Cream')"></div>
+            <div class="color-option" style="background-color: ivory;" onclick="changeCream('ivory', 'Vanilla Cream')"></div>
+            <div class="color-option" style="background-color: lightgreen;" onclick="changeCream('lightgreen', 'Mint Cream')"></div>
+            <div class="color-option" style="background-color: lightyellow;" onclick="changeCream('lightyellow', 'Lemon Cream')"></div>
+        </div>
+        <p id="cream-flavor" class="flavor-name">Cream Flavor: None</p>
+    </div>
+
+    <div id="topping-section" style="display: none;">
+        <p class="instructions">Finally, choose a topping for your cake:</p>
+        <div class="color-options">
+            <div class="color-option" style="background-color: red;" onclick="changeTopping('images/strawberry.svg', 'Strawberry')"></div>
+            <div class="color-option" style="background-color: darkred;" onclick="changeTopping('images/cherry.svg', 'Cherry')"></div>
+            <div class="color-option" style="background-color: brown;" onclick="changeTopping('images/chocolate.svg', 'Chocolate Piece')"></div>
+            <div class="color-option" style="background-color: pink;" onclick="changeTopping('images/rose.svg', 'Rose')"></div>
+        </div>
+        <p id="topping-flavor" class="flavor-name">Topping: None</p>
+    </div>
+
+    <div id="candle-section" style="display: none;">
+        <p class="instructions">Press the "Done" button to add a candle on top of your cake:</p>
+        <button id="done-button" onclick="addCandle()">Done</button>
+    </div>
+    
+
+    <footer>
+        <p>Enjoy life—it's a piece of cake! 🍰</p>
+    </footer>
+
+    <script>
+        function changeBase(color, flavor) {
+            document.getElementById('cake').style.fill = color;
+            document.getElementById('flavor').textContent = `Base Flavor: ${flavor}`;
+            document.getElementById('cream-section').style.display = 'block';
+        }
+
+        function changeCream(color, flavor) {
+            document.getElementById('cream').style.fill = color;
+            document.getElementById('cream-flavor').textContent = `Cream Flavor: ${flavor}`;
+            document.getElementById('topping-section').style.display = 'block';
+        }
+
+        function changeTopping(imageSrc, flavor) {
+            document.getElementById('topping-left').setAttribute('href', imageSrc);
+            document.getElementById('topping-left-center').setAttribute('href', imageSrc);
+            document.getElementById('topping-right-center').setAttribute('href', imageSrc);
+            document.getElementById('topping-right').setAttribute('href', imageSrc);
+
+            document.getElementById('topping-left').style.display = 'block';
+            document.getElementById('topping-left-center').style.display = 'block';
+            document.getElementById('topping-right-center').style.display = 'block';
+            document.getElementById('topping-right').style.display = 'block';
+
+            document.getElementById('topping-flavor').textContent = `Topping: ${flavor}`;
+        }
+    </script>
+
+<div id="candle-section" style="display: none;">
+    <p class="instructions">Press the "Done" button to add a candle on top of your cake:</p>
+    <button id="done-button" onclick="addCandle()">Done</button>
+</div>
+
+<script>
+    function showDoneButton() {
+        document.getElementById('candle-section').style.display = 'block';
+    }
+
+    function addCandle() {
+        const candle = document.getElementById('candle');
+        candle.style.display = 'block';
+        candle.addEventListener('click', lightCandle);
+    }
+
+    function lightCandle() {
+        const flameGif = document.getElementById('candle-flame-gif');
+        flameGif.style.display = 'block'; // Show the flame GIF
+        flameGif.style.top = `${candle.getBoundingClientRect().top + window.scrollY - 15}px`; // Adjust position
+        flameGif.style.left = `${candle.getBoundingClientRect().left + window.scrollX + 5}px`; // Adjust position
+    }
+
+    // Ensure the "Done" button appears once the topping is chosen
+    const toppingOptions = document.querySelectorAll("#topping-section .color-option");
+    toppingOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            document.getElementById('candle-section').style.display = 'block';
+        });
+    });
+
+</script>
+
+</body>
+</html>
+<script>
+    function lightCandle() {
+        const flameGif = document.getElementById('candle-flame-gif');
+        const candle = document.getElementById('candle');
+        flameGif.style.display = 'block'; // Show the flame GIF
+        const candleRect = candle.getBoundingClientRect();
+        flameGif.style.top = `${candleRect.top + window.scrollY - flameGif.height / 2}px`; // Adjust position
+        flameGif.style.left = `${candleRect.left + window.scrollX + candleRect.width / 2 - flameGif.width / 2}px`; // Adjust position
+    }
+</script>
+<script>
+    function lightCandle() {
+        const flameGif = document.getElementById('candle-flame-gif');
+        const candle = document.getElementById('candle');
+        flameGif.style.display = 'block'; // Show the flame GIF
+        const candleRect = candle.getBoundingClientRect();
+        flameGif.style.top = `${candleRect.top + window.scrollY - flameGif.height / 2 - 12}px`; // Adjust position
+        flameGif.style.left = `${candleRect.left + window.scrollX + candleRect.width / 2 - flameGif.width / 2}px`; // Adjust position
+    }
+</script>

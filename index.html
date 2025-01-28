@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life's Bakery 🍰</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #FFFFFF;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .top-header {
+            background-color: #FFFFFF;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+        .top-header h1 {
+            font-size: 2em;
+            color: #5C4033;
+            font-family: 'Great Vibes', cursive;
+        }
+        .location {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            color: #5C4033;
+        }
+        .location img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        header {
+            background-color: #D3D3D3;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #5C4033;
+            margin-left: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+        #banner-img {
+            width: 200px;
+            height: auto;
+        }
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .placeholder-box {
+            background-color: #D3D3D3;
+            height: 300px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            font-family: 'Georgia', serif;
+            color: #5C4033;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .grid-item {
+            background-color: #FADADD;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            perspective: 1000px;
+        }
+        .grid-inner {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .grid-item:hover .grid-inner {
+            transform: rotateY(180deg);
+        }
+        .grid-front, .grid-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .grid-front {
+            background-color: #FFE4E1;
+        }
+        .grid-back {
+            background-color: #FFDAB9;
+            transform: rotateY(180deg);
+        }
+        footer {
+            background-color: #FFDAB9;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-header">
+        <h1>Life's 🍰 Bakery</h1>
+        <div class="location">
+            <img src="images/pinklocation.png" alt="Location Icon">
+            <span>Your State Of Mind</span>
+        </div>
+    </div>
+
+    <nav style="background-color: #FFDAB9; padding: 10px 0;">
+        <ul style="display: flex; justify-content: space-around; list-style: none; margin: 0; padding: 0;">
+            <li><button style="background: none; border: none; color: #5C4033; font-family: inherit; cursor: pointer;" onclick="location.href='home.html'">Home</button></li>
+            <li><button style="background: none; border: none; color: #5C4033; font-family: inherit; cursor: pointer;" onclick="location.href='create.html'">Create</button></li>
+            <li><button style="background: none; border: none; color: #5C4033; font-family: inherit; cursor: pointer;" onclick="location.href='gallery.html'">Gallery</button></li>
+            <li><button style="background: none; border: none; color: #5C4033; font-family: inherit; cursor: pointer;" onclick="location.href='contact.html'">Contact</button></li>
+        </ul>
+    </nav>
+
+    <header style="background-color: #FFE4E1;">
+        <h1>A Piece Of Cake</h1>
+        <img id="banner-img" src="images/pinkcake.png" alt="Cake Slice">
+    </header>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bannerImg = document.getElementById('banner-img');
+            const gifSrc = 'images/sprinklesclear.gif'; // Replace with your GIF source
+
+            bannerImg.addEventListener('click', function() {
+                bannerImg.src = gifSrc;
+            });
+        });
+    </script>
+
+<p style="font-family: 'Georgia', serif; color: #5C4033; text-align: center;">A Guide to Living a Simple Life</p>
+
+<section>
+    <div class="placeholder-box">
+        <img id="banner-img" src="images/cakes.png" alt="Cake Slice" style="width: 100%; height: 100%; object-fit: contain;">
+        <style>
+            .placeholder-box {
+            background-color: transparent;
+            }
+        </style>
+    </div>
+    <h2 style="text-align: center;"> The Recipe</h2>
+</section>
+
+    <section>
+        <div class="placeholder-box">
+            <img id="banner-img" src="images/ingredients.png" alt="Cake Slice" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center;">Instructions</h2>
+        <div class="grid-container" style="gap: 40px;">
+            <div class="grid-item">
+                <div class="grid-inner">
+                    <div class="grid-front"><img src="images/strawberries.png" alt="Placeholder Image" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="grid-back"><p>Focus on the essentials and let go of the rest.</p></div>
+                </div>
+                <h3 style="text-align: center; font-size: 0.9em;">1. Keep Ingredients Simple</h3>
+            </div>
+            <div class="grid-item">
+                <div class="grid-inner">
+                    <div class="grid-front"><img src="images/mixing.png" alt="Placeholder Image" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="grid-back"><p>A gentle approach often leads to the best results.</p></div>
+                </div>
+                <h3 style="text-align: center; font-size: 0.9em;">2. Mix Things Gently</h3>
+            </div>
+            <div class="grid-item">
+                <div class="grid-inner">
+                    <div class="grid-front"><img src="images/cakeoven.png" alt="Placeholder Image" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="grid-back"><p>Patience is key for personal growth and success.</p></div>
+                </div>
+                <h3 style="text-align: center; font-size: 0.9em;">3. Let It Bake</h3>
+            </div>
+            <div class="grid-item">
+                <div class="grid-inner">
+                    <div class="grid-front"><img src="images/forsting.png" alt="Placeholder Image" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="grid-back"><p>Add joy and creativity to your daily routine.</p></div>
+                </div>
+                <h3 style="text-align: center; font-size: 0.9em;">4. Add Some Frosting</h3>
+            </div>
+            <div class="grid-item" style="grid-column: span 2;">
+                <div class="grid-inner">
+                    <div class="grid-front"><img src="images/sharecake.png" alt="Placeholder Image" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="grid-back"><p>Life is better when shared with others.</p></div>
+                </div>
+                <h3 style="text-align: center; font-size: 0.9em;">5. Share Your Slice</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <img src="images/redvelvet.gif" alt="GIF Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
+    </section>
+
+    <footer>
+        <p>Enjoy life—it's a piece of cake! 🍰</p>
+    </footer>
+</body>
+</html>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: 'Georgia', serif;
+        background-color: #FFFFFF;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+    }
+    .top-header {
+        background-color: #FFFFFF;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+    .top-header h1 {
+        font-size: 1.5em;
+        color: #5C4033;
+        font-family: 'Great Vibes', cursive;
+    }
+    .location {
+        display: flex;
+        align-items: center;
+        font-size: 0.8em;
+        color: #5C4033;
+    }
+    .location img {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+    header {
+        background-color: #D3D3D3;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+        font-size: 2em;
+        color: #5C4033;
+        margin-left: 10px;
+        font-family: 'Great Vibes', cursive;
+    }
+    #banner-img {
+        width: 150px;
+        height: auto;
+    }
+    section {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .placeholder-box {
+        background-color: #D3D3D3;
+        height: 200px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        font-family: 'Georgia', serif;
+        color: #5C4033;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .grid-item {
+        background-color: #FADADD;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        perspective: 1000px;
+    }
+    .grid-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    .grid-item:hover .grid-inner {
+        transform: rotateY(180deg);
+    }
+    .grid-front, .grid-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+    .grid-front {
+        background-color: #FFE4E1;
+    }
+    .grid-back {
+        background-color: #FFDAB9;
+        transform: rotateY(180deg);
+    }
+    footer {
+        background-color: #FFDAB9;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @media (min-width: 600px) {
+        .top-header h1 {
+            font-size: 2em;
+        }
+        .location {
+            font-size: 0.9em;
+        }
+        .location img {
+            width: 20px;
+            height: 20px;
+        }
+        header {
+            padding: 40px;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        #banner-img {
+            width: 200px;
+        }
+        section {
+            padding: 40px;
+        }
+        .placeholder-box {
+            height: 300px;
+        }
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .grid-item {
+            height: 200px;
+        }
+    }
+</style>
+
